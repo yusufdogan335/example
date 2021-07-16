@@ -53,8 +53,6 @@ section {
 
 h2 {
     margin-bottom: 40px;
-    text-transform: uppercase;
-    
 }
 span {
     text-decoration: underline;
@@ -68,3 +66,11 @@ span {
 .inst li {
     margin-bottom: 5px;
 }
+
+aside {
+    width: 50%;
+    margin: 60px auto 0;
+    color: white;
+}
+
+
