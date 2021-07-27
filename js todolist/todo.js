@@ -2,6 +2,7 @@ let add = document.querySelector("#liveToastBtn");
 let task = document.querySelector("#task");
 let list = document.querySelector("#list");
 
+// Create New ToDo
 add.addEventListener('click', newElement());
 
 function newElement() {
@@ -20,5 +21,14 @@ function newElement() {
     }
 }
 
+// Remove Li
+let closebutton = document.getElementsByClassName('close');
+
+for (let i = 0; i < closebutton.length; i++) {
+    closebutton[i].onclick = function () {
+        let li = this.parentElement;
+        li.style.display = 'none';
+    }
+}
 
 
