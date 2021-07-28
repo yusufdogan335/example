@@ -1,6 +1,8 @@
 let add = document.querySelector("#liveToastBtn");
 let task = document.querySelector("#task");
 let list = document.querySelector("#list");
+let closebutton = document.getElementsByClassName('close');
+
 
 // Create New ToDo
 add.addEventListener('click', newElement());
@@ -14,21 +16,24 @@ function newElement() {
         let text = document.createTextNode('x');
         spanclose.classList = 'close';
         liDOM.appendChild(spanclose);
-        spanclose.appendChild(text);
+        spanclose.appendChild(text); a
         task.value = ""
+        // Remove Li
+        for (let i = 0; i < closebutton.length; i++) {
+            closebutton[i].onclick = function () {
+                let li = this.parentElement;
+                li.style.display = 'none';
+                li.classList.remove('checked');
+            }
+        }
     } else {
         console.log("lütfen bir değer giriniz...")
     }
 }
 
-// Remove Li
-let closebutton = document.getElementsByClassName('close');
-
-for (let i = 0; i < closebutton.length; i++) {
-    closebutton[i].onclick = function () {
-        let li = this.parentElement;
-        li.style.display = 'none';
+list.addEventListener('click', function (item) {
+    if (item.target.tagName = 'li') {
+        item.target.classList.toggle('checked')
     }
-}
-
+})
 
